@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class WithdrawActivity extends Activity implements View.OnClickListener  {
 
     public ListView mList;
-    private ArrayList<Withdraw> data;
+    public ArrayList<Withdraw> data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
