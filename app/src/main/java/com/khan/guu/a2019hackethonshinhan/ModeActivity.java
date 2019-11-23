@@ -30,6 +30,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
     EditText edit;
     Button save;
     ImageView mode_back;
+    Button manage;
 
 
     @Override
@@ -56,8 +57,11 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         save = findViewById(R.id.save);
         save.setOnClickListener(new ModeActivity.MyListener5());
 
-        mode_back = findViewById(R.id.mode_back);
-        mode_back.setVisibility(View.VISIBLE);
+        manage = findViewById(R.id.manage);
+        manage.setOnClickListener(new ModeActivity.MyListener6());
+        manage.setVisibility(View.INVISIBLE);
+
+
 
         String url = "http://10.3.17.205:8000/api/total/get_mode/?user=user1";
         ContentValues _params = new ContentValues();
@@ -97,12 +101,13 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "음주모드 On", Toast.LENGTH_SHORT).show();
                 toggle.setImageResource(R.drawable.toggle_on);
                 lo.setVisibility(View.VISIBLE);
-                mode_back.setVisibility(View.INVISIBLE);
+                manage.setVisibility(View.VISIBLE);
+
                 flag =1;
             } else {
                 toggle.setImageResource(R.drawable.toggle_off);
                 lo.setVisibility(View.INVISIBLE);
-                mode_back.setVisibility(View.INVISIBLE);
+                manage.setVisibility(View.INVISIBLE);
                 flag =0;
             }
 
@@ -127,7 +132,14 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    class MyListener6 implements View.OnClickListener {
 
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getApplicationContext(), WithdrawActivity.class);
+            startActivity(intent);
+        }
+    }
 
     public void OnClickHandler(View view)
     {
@@ -142,7 +154,6 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
 
 
     @Override
