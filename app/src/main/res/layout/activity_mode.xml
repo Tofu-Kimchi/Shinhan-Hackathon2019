@@ -25,6 +25,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/toggle" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mode_back"
+        android:id="@+id/mode_back"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,10 +56,8 @@
 
             android:paddingRight="100dp"
             android:backgroundTint="#ff3789db"
-            android:onClick="OnClickHandler"
+            android:onClick="onClick"
             android:id="@+id/save"
             />
-
     </LinearLayout>
-
 </LinearLayout>

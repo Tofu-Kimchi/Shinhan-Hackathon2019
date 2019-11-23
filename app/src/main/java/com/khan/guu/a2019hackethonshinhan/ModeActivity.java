@@ -29,6 +29,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
     ImageView before;
     EditText edit;
     Button save;
+    ImageView mode_back;
 
 
     @Override
@@ -52,7 +53,11 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         edit = (EditText)findViewById(R.id.input);
 
+        save = findViewById(R.id.save);
+        save.setOnClickListener(new ModeActivity.MyListener5());
 
+        mode_back = findViewById(R.id.mode_back);
+        mode_back.setVisibility(View.VISIBLE);
 
         String url = "http://10.3.17.205:8000/api/total/get_mode/?user=user1";
         ContentValues _params = new ContentValues();
@@ -89,18 +94,20 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onClick(View v) {
             if(flag == 0) {
+                Toast.makeText(getApplicationContext(), "음주모드 On", Toast.LENGTH_SHORT).show();
                 toggle.setImageResource(R.drawable.toggle_on);
                 lo.setVisibility(View.VISIBLE);
+                mode_back.setVisibility(View.INVISIBLE);
                 flag =1;
             } else {
                 toggle.setImageResource(R.drawable.toggle_off);
                 lo.setVisibility(View.INVISIBLE);
+                mode_back.setVisibility(View.INVISIBLE);
                 flag =0;
             }
 
         }
     }
-
 
     class MyListener4 implements View.OnClickListener {
 
@@ -110,6 +117,17 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(itt);
         }
     }
+
+    class MyListener5 implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(getApplicationContext(), "한도가 지정되었습니다", Toast.LENGTH_SHORT).show();
+            edit.setText("");
+        }
+    }
+
+
 
     public void OnClickHandler(View view)
     {
