@@ -8,12 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.design.widget.TabLayout;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class ModeActivity extends AppCompatActivity implements View.OnClickListener {
     android.support.v7.app.ActionBar bar;
     TabLayout tabLayout;
+    EditText et;
+    Switch s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +28,12 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
 
+        et = findViewById(R.id.input);
+        s = findViewById(R.id.visibilitySwitch);
+
         tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("음주모드"));
-        tabLayout.addTab(tabLayout.newTab().setText("총 음주 금액"));
+        //tabLayout.addTab(tabLayout.newTab().setText("음주모드"));
+        //tabLayout.addTab(tabLayout.newTab().setText("총 음주 금액"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -43,6 +51,18 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+                if(isChecked)
+                    et.setVisibility(View.INVISIBLE);
+                else
+                    et.setVisibility(View.VISIBLE);
+            }
+        });
+
+
 //        ImageButton ImageButton_account_before = (ImageButton) findViewById(R.id.ImageButton_withdraw_before);
 //        ImageButton_account_before.setOnClickListener(this);
     }
@@ -53,15 +73,15 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (index) {
             case 0 :
-                textView1.setVisibility(View.VISIBLE) ;
-                textView2.setVisibility(View.INVISIBLE) ;
+
                 break ;
             case 1 :
-                textView1.setVisibility(View.INVISIBLE) ;
-                textView2.setVisibility(View.VISIBLE) ;
+
                 break ;
         }
     }
+
+
 
     @Override
     public void onClick(View view) {
