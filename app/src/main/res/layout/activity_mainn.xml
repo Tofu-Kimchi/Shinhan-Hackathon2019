@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/bg2">
+    android:scaleType="fitXY">
 
     <!-- 백그라운드로 사용할 ImageView -->
     <ImageView
