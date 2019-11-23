@@ -22,7 +22,7 @@ public class GaipActivity extends Activity implements View.OnClickListener {
         Intent intent;
         switch (v.getId()) {
             case R.id.Button_to_mode:
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, ModeActivity.class);
                 startActivity(intent);
                 break;
         }
