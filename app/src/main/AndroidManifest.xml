@@ -22,6 +22,8 @@
         </activity>
 
         <activity android:name=".GaipActivity"></activity>
+        <activity android:name=".ModeActivity"></activity>
+        <activity android:name=".SumActivity"></activity>
     </application>
 
 </manifest>
