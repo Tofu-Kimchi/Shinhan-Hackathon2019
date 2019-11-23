@@ -5,7 +5,8 @@
     android:backgroundTint="#00000000"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:design="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bg">
 
     <ImageView
         android:layout_width="match_parent"

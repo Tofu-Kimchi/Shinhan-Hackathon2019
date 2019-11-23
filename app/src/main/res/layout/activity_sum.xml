@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:design="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bg">
 
     <ImageView
         android:layout_width="match_parent"
@@ -18,17 +19,19 @@
         android:layout_height="wrap_content"
         android:src="@drawable/mode_f"
         android:id="@+id/mode2_1"/>
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        android:backgroundTint="#11111111">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/sum"/>
+            android:src="@drawable/summ"
+            android:backgroundTint="#11111111"/>
 
         <TextView
             android:id="@+id/mode2"
@@ -36,7 +39,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00000000"
             android:textSize="90sp"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="450dp"
             android:layout_marginLeft="200dp"
             />
     </RelativeLayout>

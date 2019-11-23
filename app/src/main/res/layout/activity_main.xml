@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/bg3">
     <!-- 백그라운드로 사용할 ImageView -->
     <ImageView
         android:layout_width="fill_parent"

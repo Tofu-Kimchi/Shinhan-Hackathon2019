@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">2019.Hackethon.Shinhan</string>
+    <color name="bg">#FFFFFF</color>
+    <color name="bg2">#ff3789db</color>
+    <color name="bg3">#051B24</color>
 </resources>
