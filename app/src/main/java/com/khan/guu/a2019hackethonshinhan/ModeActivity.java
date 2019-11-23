@@ -1,7 +1,9 @@
 package com.khan.guu.a2019hackethonshinhan;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.TabLayout;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,12 +20,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ModeActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView iv1;
     ImageView toggle;
     LinearLayout lo;
     ImageView before;
+    EditText edit;
+    Button save;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,10 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         before = findViewById(R.id.tab);
         before.setOnClickListener(new ModeActivity.MyListener4());
+
+        edit = (EditText)findViewById(R.id.input);
+
+
 
         String url = "http://10.3.17.205:8000/api/total/get_mode/?user=user1";
         ContentValues _params = new ContentValues();
@@ -90,6 +101,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
     class MyListener4 implements View.OnClickListener {
 
         @Override
@@ -98,6 +110,21 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(itt);
         }
     }
+
+    public void OnClickHandler(View view)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("입력되었습니다");
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
+
+
+
+    }
+
 
 
     @Override

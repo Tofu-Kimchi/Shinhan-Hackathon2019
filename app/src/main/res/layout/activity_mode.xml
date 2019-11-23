@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#00000000"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:design="http://schemas.android.com/tools"
     android:orientation="vertical">
@@ -9,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/tab1"
+        android:src="@drawable/tab"
         android:id="@+id/tab" />
 
     <ImageView
@@ -35,13 +36,21 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="           한도를 입력하세요                                                                              "/>
+            android:backgroundTint="#11111111"
+            android:textAlignment="center"
+            android:id="@+id/input"
+            android:hint="                                               한도를 입력하세요                                                 "/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="save"
+            android:textAlignment="center"
+
+            android:paddingLeft="100dp"
             android:backgroundTint="#ff3789db"
+            android:onClick="OnClickHandler"
+            android:id="@+id/save"
             />
 
     </LinearLayout>
