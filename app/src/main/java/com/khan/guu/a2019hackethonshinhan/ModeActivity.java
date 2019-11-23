@@ -19,6 +19,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode);
+
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
 
