@@ -24,7 +24,8 @@
         <activity android:name=".GaipActivity"></activity>
         <activity android:name=".ModeActivity"></activity>
         <activity android:name=".SumActivity"></activity>
-        <activity android:name=".WithDrawActivity"></activity>
+        <activity android:name=".WithdrawActivity"></activity>
+        <activity android:name=".MainActivity2"></activity>
     </application>
 
 </manifest>

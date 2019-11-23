@@ -20,41 +20,34 @@ import android.widget.TextView;
 
 public class ModeActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView iv1;
-    EditText et;
-    Switch s;
+    ImageView toggle;
+    LinearLayout lo;
+    ImageView before;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        //((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        et = findViewById(R.id.input);
-        s = findViewById(R.id.visibilitySwitch);
-        et.setVisibility(View.INVISIBLE);
-
         iv1 = (ImageView)findViewById(R.id.mode1_1);
         iv1.setOnClickListener(new ModeActivity.MyListener2());
 
+        toggle = (ImageView)findViewById(R.id.toggle);
+        toggle.setOnClickListener(new ModeActivity.MyListener3());
+        toggle.setImageResource(R.drawable.toggle_off);
+
+        lo = findViewById(R.id.lo);
+        lo.setOnClickListener(new ModeActivity.MyListener3());
+        lo.setVisibility(View.INVISIBLE);
+
+        before = findViewById(R.id.tab);
+        before.setOnClickListener(new ModeActivity.MyListener4());
 
         String url = "http://10.3.17.205:8000/api/total/get_mode/?user=user1";
         ContentValues _params = new ContentValues();
         NetworkTask networkTask = new NetworkTask(url, _params);
         networkTask.execute();
 
-        s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // do something, the isChecked will be
-                // true if the switch is in the On position
-                if(isChecked)
-                    et.setVisibility(View.VISIBLE);
-                else
-                    et.setVisibility(View.INVISIBLE);
-            }
-        });
 
 //        ImageButton ImageButton_account_before = (ImageButton) findViewById(R.id.ImageButton_withdraw_before);
 //        ImageButton_account_before.setOnClickListener(this);
@@ -79,6 +72,32 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    class MyListener3 implements View.OnClickListener {
+
+        int flag = 0;
+        @Override
+        public void onClick(View v) {
+            if(flag == 0) {
+                toggle.setImageResource(R.drawable.toggle_on);
+                lo.setVisibility(View.VISIBLE);
+                flag =1;
+            } else {
+                toggle.setImageResource(R.drawable.toggle_off);
+                lo.setVisibility(View.INVISIBLE);
+                flag =0;
+            }
+
+        }
+    }
+
+    class MyListener4 implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent itt = new Intent(getApplicationContext(), MainActivity2.class);
+            startActivity(itt);
+        }
+    }
 
 
     @Override

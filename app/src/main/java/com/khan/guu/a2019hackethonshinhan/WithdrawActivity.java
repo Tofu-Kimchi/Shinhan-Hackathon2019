@@ -28,4 +28,4 @@ public class WithdrawActivity extends Activity implements View.OnClickListener  
             }
         }
     }
-}
+
