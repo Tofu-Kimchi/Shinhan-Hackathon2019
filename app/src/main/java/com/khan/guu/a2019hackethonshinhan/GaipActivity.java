@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class GaipActivity extends Activity implements View.OnClickListener {
     @Override
@@ -13,7 +14,8 @@ public class GaipActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gaip);
 
-        Button Button_main_filup = (Button) findViewById(R.id.Button_to_mode);
+        ImageView Button_main_filup = (ImageView) findViewById(R.id.Button_to_mode);
+        ImageView gaip_back =
         Button_main_filup.setOnClickListener(this);
     }
 
@@ -25,6 +27,7 @@ public class GaipActivity extends Activity implements View.OnClickListener {
                 intent = new Intent(this, ModeActivity.class);
                 startActivity(intent);
                 break;
+                case R.id.imageView_gaip_back
         }
     }
 }

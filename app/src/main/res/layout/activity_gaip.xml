@@ -10,9 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:background="#01b487"
         android:orientation="vertical">
-
 
         <ImageView
             android:id="@+id/imageView_gaip_back"
@@ -26,10 +24,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4.5"
-        android:orientation="vertical"
-        android:weightSum="10">
-
+        android:layout_weight="5.5"
+        android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -38,147 +34,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
 
-                <Button
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/jeogum"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/jeogum2_new"
+                    />
+                <ImageView
                     android:id="@+id/Button_to_mode"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#efefef"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:paddingBottom="8dp"
-                    android:textSize="12sp"
-                    android:textColor="#3d3d3d"
-                    android:text="마이플랜트 1" />
-
-                <TextView
-                    android:id="@+id/textView_setting_profile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="프로필수정"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-                <TextView
-                    android:id="@+id/textView_setting_plant"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="재배식물"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="다이어리 팝업"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#efefef"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:paddingBottom="8dp"
-                    android:textSize="12sp"
-                    android:textColor="#3d3d3d"
-                    android:text="식물대백과" />
-
-                <TextView
-                    android:id="@+id/textView_setting_plantCollection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="식물도감"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-                <TextView
-                    android:id="@+id/textView_setting_ai"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="ai 검색"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#efefef"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:paddingBottom="8dp"
-                    android:textSize="12sp"
-                    android:textColor="#3d3d3d"
-                    android:text="알림 / 연결" />
-
-                <TextView
-                    android:id="@+id/textView_setting_alert"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="알림설정"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
-                <TextView
-                    android:id="@+id/textView_setting_disconnect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.06"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="11dp"
-                    android:text="연결해제"
-                    android:textColor="#3d3d3d"
-                    android:textSize="14sp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/jeogum_btn_new" />
             </LinearLayout>
         </ScrollView>
-
-
-
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
-
-
-        <TextView
-            android:id="@+id/TextView_setting_addPlant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gaip_before_btn"
-            android:textSize="18sp"
-            android:textColor="#ffffff"
-            android:lineSpacingExtra="-3sp"
-            android:gravity="center"
-            android:text="플랜트버디 추가등록" />
-    </LinearLayout>
-
 </LinearLayout>
