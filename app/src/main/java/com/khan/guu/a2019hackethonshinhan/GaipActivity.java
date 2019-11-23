@@ -25,7 +25,7 @@ public class GaipActivity extends Activity implements View.OnClickListener {
         Intent intent;
         switch (v.getId()) {
             case R.id.Button_to_mode:
-                intent = new Intent(this, ModeActivity.class);
+                intent = new Intent(this, MainActivity2.class);
                 startActivity(intent);
                 break;
             case R.id.imageView_gaip_back:
