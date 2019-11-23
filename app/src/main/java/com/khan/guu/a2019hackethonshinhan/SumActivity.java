@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 public class SumActivity extends AppCompatActivity {
 
-    android.support.v7.app.ActionBar bar;
-    TabLayout tabLayout;
+    ImageView before;
     ImageView iv2;
     TextView total;
 
@@ -23,8 +22,8 @@ public class SumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sum);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
+        before = findViewById(R.id.tab);
+        before.setOnClickListener(new SumActivity.MyListener4());
 
         iv2 = (ImageView)findViewById(R.id.mode2_1);
         iv2.setOnClickListener(new SumActivity.MyListener3());
@@ -41,6 +40,15 @@ public class SumActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent it = new Intent(getApplicationContext(), ModeActivity.class);
             startActivity(it);
+        }
+    }
+
+    class MyListener4 implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent itt = new Intent(getApplicationContext(), MainActivity2.class);
+            startActivity(itt);
         }
     }
 
