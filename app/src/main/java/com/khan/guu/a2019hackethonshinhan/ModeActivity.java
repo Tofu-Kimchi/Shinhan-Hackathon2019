@@ -2,6 +2,7 @@ package com.khan.guu.a2019hackethonshinhan;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -73,10 +74,13 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (index) {
             case 0 :
-
+                Intent it = new Intent(this, ModeActivity.class);
+                startActivity(it);
                 break ;
-            case 1 :
 
+            case 1 :
+                Intent it2 = new Intent(this, SumActivity.class);
+                startActivity(it2);
                 break ;
         }
     }

@@ -1,6 +1,7 @@
 package com.khan.guu.a2019hackethonshinhan;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -16,13 +17,11 @@ public class SumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mode);
+        setContentView(R.layout.activity_sum);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("음주모드"));
-        tabLayout.addTab(tabLayout.newTab().setText("총 음주 금액"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -42,17 +41,16 @@ public class SumActivity extends AppCompatActivity {
     }
 
     private void changeView(int index) {
-        TextView textView1 = (TextView) findViewById(R.id.mode1) ;
-        TextView textView2 = (TextView) findViewById(R.id.mode2) ;
 
         switch (index) {
             case 0 :
-                textView1.setVisibility(View.VISIBLE) ;
-                textView2.setVisibility(View.INVISIBLE) ;
+                Intent it = new Intent(this, ModeActivity.class);
+                startActivity(it);
                 break ;
+
             case 1 :
-                textView1.setVisibility(View.INVISIBLE) ;
-                textView2.setVisibility(View.VISIBLE) ;
+                Intent it2 = new Intent(this, SumActivity.class);
+                startActivity(it2);
                 break ;
         }
     }

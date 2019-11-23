@@ -52,13 +52,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mode2"
-            android:text="22222222222222222222222222"/>
+            android:text="OOO님의 총액은 ~입니다."
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 </LinearLayout>
