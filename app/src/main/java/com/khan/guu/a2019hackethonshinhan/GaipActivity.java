@@ -15,7 +15,8 @@ public class GaipActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_gaip);
 
         ImageView Button_main_filup = (ImageView) findViewById(R.id.Button_to_mode);
-        ImageView gaip_back =
+        ImageView gaip_back = (ImageView) findViewById(R.id.imageView_gaip_back);
+        gaip_back.setOnClickListener(this);
         Button_main_filup.setOnClickListener(this);
     }
 
@@ -27,7 +28,9 @@ public class GaipActivity extends Activity implements View.OnClickListener {
                 intent = new Intent(this, ModeActivity.class);
                 startActivity(intent);
                 break;
-                case R.id.imageView_gaip_back
+            case R.id.imageView_gaip_back:
+                finish();
+                break;
         }
     }
 }
