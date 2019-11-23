@@ -20,6 +20,7 @@ public class WithdrawActivity extends Activity implements View.OnClickListener  
 
 //        private ArrayList<Withdraw> data = new ArrayList<>();
 //        data.add()
+        data= new ArrayList<Withdraw>();
         Withdraw withdraw = new Withdraw();
         withdraw.setIdx("1");
         withdraw.setDate("2019-07-26");
@@ -27,18 +28,21 @@ public class WithdrawActivity extends Activity implements View.OnClickListener  
         withdraw.setTotal(210000);
         data.add(withdraw);
 
+        withdraw = new Withdraw();
         withdraw.setIdx("2");
         withdraw.setDate("2019-08-26");
         withdraw.setPrice(194600);
         withdraw.setTotal(404600);
         data.add(withdraw);
 
+        withdraw = new Withdraw();
         withdraw.setIdx("3");
         withdraw.setDate("2019-09-26");
         withdraw.setPrice(87000);
         withdraw.setTotal(491600);
         data.add(withdraw);
 
+        withdraw = new Withdraw();
         withdraw.setIdx("4");
         withdraw.setDate("2019-11-24");
         withdraw.setPrice(370000);

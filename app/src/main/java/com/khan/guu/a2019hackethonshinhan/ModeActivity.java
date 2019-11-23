@@ -110,7 +110,6 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
                 manage.setVisibility(View.INVISIBLE);
                 flag =0;
             }
-
         }
     }
 
@@ -151,10 +150,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         alertDialog.show();
 
-
-
     }
-
 
     @Override
     public void onClick(View view) {
@@ -170,17 +166,12 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-
-
-
-
 //        switch (view.getId()) {
 //            case R.id.ImageButton_withdraw_before:
 //                finish();
 //                break;
 //        }
     }
-
 
     public class NetworkTask extends AsyncTask<Void, Void, String> {
 
