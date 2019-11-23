@@ -19,51 +19,40 @@
         android:src="@drawable/mode1_1"
         android:id="@+id/mode1_1" />
 
-
-    <ImageView
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/toggle" />
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#11111111"
+        android:textAlignment="center"
+        android:id="@+id/input"
+        android:hint="                                                                       한도를 입력하세요                                                 "/>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:backgroundTint="#00000000"
-        android:paddingTop="100dp"
-        android:id="@+id/lo">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#11111111"
-            android:textAlignment="center"
-            android:id="@+id/input"
-            android:hint="                                                 한도를 입력하세요                                                 "/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="save"
             android:textAlignment="center"
+            android:layout_gravity="center"
 
-            android:paddingRight="100dp"
+
             android:backgroundTint="#00000000"
             android:onClick="onClick"
             android:id="@+id/save"
             />
 
-        <Button
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
 
-            android:textAlignment="viewStart"
 
-            android:paddingRight="100dp"
             android:backgroundTint="#00000000"
             android:onClick="onClick"
             android:id="@+id/manage"
+            android:src="@drawable/lookhere_4"
             />
-    </LinearLayout>
+
 </LinearLayout>

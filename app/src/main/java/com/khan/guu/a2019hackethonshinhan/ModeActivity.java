@@ -30,7 +30,8 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
     EditText edit;
     Button save;
     ImageView mode_back;
-    Button manage;
+    ImageView manage;
+
 
 
     @Override
@@ -41,13 +42,8 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         iv1 = (ImageView)findViewById(R.id.mode1_1);
         iv1.setOnClickListener(new ModeActivity.MyListener2());
 
-        toggle = (ImageView)findViewById(R.id.toggle);
-        toggle.setOnClickListener(new ModeActivity.MyListener3());
-        toggle.setImageResource(R.drawable.toggle_off);
 
-        lo = findViewById(R.id.lo);
-        lo.setOnClickListener(new ModeActivity.MyListener3());
-        lo.setVisibility(View.INVISIBLE);
+
 
         before = findViewById(R.id.tab);
         before.setOnClickListener(new ModeActivity.MyListener4());
@@ -59,7 +55,7 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
         manage = findViewById(R.id.manage);
         manage.setOnClickListener(new ModeActivity.MyListener6());
-        manage.setVisibility(View.INVISIBLE);
+
 
 
 
