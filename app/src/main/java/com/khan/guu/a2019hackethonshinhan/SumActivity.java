@@ -7,12 +7,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SumActivity extends AppCompatActivity {
 
     android.support.v7.app.ActionBar bar;
     TabLayout tabLayout;
+    ImageView iv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,37 +23,16 @@ public class SumActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                int pos = tab.getPosition() ;
-                changeView(pos) ;
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
+        iv2 = (ImageView)findViewById(R.id.mode2_1);
+        iv2.setOnClickListener(new SumActivity.MyListener3());
     }
 
-    private void changeView(int index) {
+    class MyListener3 implements View.OnClickListener {
 
-        switch (index) {
-            case 0 :
-                Intent it = new Intent(this, ModeActivity.class);
-                startActivity(it);
-                break ;
-
-            case 1 :
-                Intent it2 = new Intent(this, SumActivity.class);
-                startActivity(it2);
-                break ;
+        @Override
+        public void onClick(View v) {
+            Intent it = new Intent(getApplicationContext(), ModeActivity.class);
+            startActivity(it);
         }
     }
 }

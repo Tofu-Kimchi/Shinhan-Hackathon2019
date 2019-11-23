@@ -7,17 +7,19 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.TabLayout;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
 public class ModeActivity extends AppCompatActivity implements View.OnClickListener {
-    android.support.v7.app.ActionBar bar;
-    TabLayout tabLayout;
+    ImageView iv1;
     EditText et;
     Switch s;
 
@@ -27,61 +29,50 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_mode);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        ((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
+        //((TextView) findViewById(R.id.main_toolbar_title)).setText("쏠음주");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         et = findViewById(R.id.input);
         s = findViewById(R.id.visibilitySwitch);
+        et.setVisibility(View.INVISIBLE);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        //tabLayout.addTab(tabLayout.newTab().setText("음주모드"));
-        //tabLayout.addTab(tabLayout.newTab().setText("총 음주 금액"));
+        iv1 = (ImageView)findViewById(R.id.mode1_1);
+        iv1.setOnClickListener(new ModeActivity.MyListener2());
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                int pos = tab.getPosition() ;
-                changeView(pos) ;
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
 
         s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // do something, the isChecked will be
                 // true if the switch is in the On position
                 if(isChecked)
-                    et.setVisibility(View.INVISIBLE);
-                else
                     et.setVisibility(View.VISIBLE);
+                else
+                    et.setVisibility(View.INVISIBLE);
             }
         });
-
 
 //        ImageButton ImageButton_account_before = (ImageButton) findViewById(R.id.ImageButton_withdraw_before);
 //        ImageButton_account_before.setOnClickListener(this);
     }
 
-    private void changeView(int index) {
-        TextView textView1 = (TextView) findViewById(R.id.mode1) ;
-        TextView textView2 = (TextView) findViewById(R.id.mode2) ;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-        switch (index) {
-            case 0 :
-                Intent it = new Intent(this, ModeActivity.class);
-                startActivity(it);
-                break ;
+    class MyListener2 implements View.OnClickListener {
 
-            case 1 :
-                Intent it2 = new Intent(this, SumActivity.class);
-                startActivity(it2);
-                break ;
+        @Override
+        public void onClick(View v) {
+            Intent it = new Intent(getApplicationContext(), SumActivity.class);
+            startActivity(it);
         }
     }
 
@@ -89,7 +80,16 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.Button_to_mode:
+                intent = new Intent(this, ModeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.imageView_gaip_back:
+                finish();
+                break;
+        }
 
 
 
