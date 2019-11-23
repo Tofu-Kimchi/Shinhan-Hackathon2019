@@ -40,7 +40,10 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
         iv1.setOnClickListener(new ModeActivity.MyListener2());
 
 
-
+        String url = "http://10.3.17.205:8000/api/total/get_mode/?user=user1";
+        ContentValues _params = new ContentValues();
+        NetworkTask networkTask = new NetworkTask(url, _params);
+        networkTask.execute();
 
         s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -104,50 +107,45 @@ public class ModeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    String url = "http://10.3.17.205:8000/api/total/get_total/?user=user1";
-//    ContentValues _params = new ContentValues();
-//    NetworkTask networkTask = new NetworkTask(url, _params);
-//    networkTask.execute();
-//
-//    public class NetworkTask extends AsyncTask<Void, Void, String> {
-//
-//        private String url;
-//        private ContentValues values;
-//
-//        public NetworkTask(String url, ContentValues values) {
-//
-//            this.url = url;
-//            this.values = values;
+    public class NetworkTask extends AsyncTask<Void, Void, String> {
+
+        private String url;
+        private ContentValues values;
+
+        public NetworkTask(String url, ContentValues values) {
+
+            this.url = url;
+            this.values = values;
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+
+            String result; // 요청 결과를 저장할 변수.
+            HttpConnection httpConnection = new HttpConnection();
+            result = httpConnection.request(url, values); // 해당 URL로 부터 결과물을 얻어온다.
+            if(result == null){
+                result = "0";
+            }else{
+                //result ="1";
+            }
+            return result;
+
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            String stResult = s;
+            //doInBackground()로 부터 리턴된 값
+//            if(s.equals("1")){
+//                 stResult = "결제 완료!";
 //        }
-//
-//        @Override
-//        protected String doInBackground(Void... params) {
-//
-//            String result; // 요청 결과를 저장할 변수.
-//            HttpConnection httpConnection = new HttpConnection();
-//            result = httpConnection.request(url, values); // 해당 URL로 부터 결과물을 얻어온다.
-//            if(result == null){
-//                result = "0";
-//            }else{
-//                //result ="1";
+//            else{
+//                stResult = "결제가 실패했습니다.";
 //            }
-//            return result;
-//
-//
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s);
-//            String stResult = s;
-//            //doInBackground()로 부터 리턴된 값
-////            if(s.equals("1")){
-////                 stResult = "결제 완료!";
-////        }
-////            else{
-////                stResult = "결제가 실패했습니다.";
-////            }
 //            tv_outPut.setText(stResult);
-//        }
-//    }
+        }
+    }
 }
